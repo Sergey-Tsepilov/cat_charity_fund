@@ -176,9 +176,12 @@ def test_donation_invalid(user_client, json_data):
 @pytest.mark.parametrize(
     'client, user_role',
     [
-        (pytest.lazy_fixture('superuser_client'), 'суперпользователя'),
-        (pytest.lazy_fixture('user_client'), 'пользователя'),
-        (pytest.lazy_fixture('test_client'), 'анонимного пользователя'),
+        (pytest.lazy_fixture('superuser_client'),  # type: ignore
+         'суперпользователя'),
+        (pytest.lazy_fixture('user_client'),  # type: ignore
+         'пользователя'),
+        (pytest.lazy_fixture('test_client'),  # type: ignore
+         'анонимного пользователя'),
     ],
     ids=['superuser', 'user', 'anonymous'],
 )
@@ -195,9 +198,12 @@ def test_donations_cant_be_updated(donation, client, user_role):
 @pytest.mark.parametrize(
     'client, user_role',
     [
-        (pytest.lazy_fixture('superuser_client'), 'суперпользователя'),
-        (pytest.lazy_fixture('user_client'), 'пользователя'),
-        (pytest.lazy_fixture('test_client'), 'анонимного пользователя'),
+        (pytest.lazy_fixture('superuser_client'),  # type: ignore
+         'суперпользователя'),
+        (pytest.lazy_fixture('user_client'),  # type: ignore
+         'пользователя'),
+        (pytest.lazy_fixture('test_client'),  # type: ignore
+         'анонимного пользователя'),
     ],
     ids=['superuser', 'user', 'anonymous'],
 )
